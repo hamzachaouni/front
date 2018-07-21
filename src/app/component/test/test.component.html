@@ -1,0 +1,36 @@
+<form>
+  <label>title</label>
+  <input type="text" name="title" [(ngModel)]="post.title">
+
+  <!--<label>body</label>
+  <input type="text" name="body" [(ngModel)]="post.body">-->
+  <label>description</label>
+  <input type="text" name="description" [(ngModel)]="post.description">
+  <label>description</label>
+  <input type="text" name="shortdescription" [(ngModel)]="post.shortdescription">
+
+  <label>shorttitle</label>
+  <input type="shorttitle" name="body" [(ngModel)]="post.shorttitle">
+
+  <label>inputs</label>
+  <input type="text" name="text" [(ngModel)]="post.inputs">
+
+  <!--<label>social</label>
+  <input type="radio" [value]="hhhh" name="social" [(ngModel)]="post.social">-->
+
+
+  <button (click)="createPost()" *ngIf="status">add</button>
+  <button (click)="updatePost()" *ngIf="!status">update</button>
+</form>
+<hr>
+<p>{{ post | json }}</p>
+<ul>
+  <li *ngFor="let post of posts">
+    <h3>{{ post.title }}</h3>
+    <button (click)="editPost(post)">edit</button>
+    <button (click)="deletePost(post)">Delete</button>
+    <hr>
+  </li>
+</ul>
+
+

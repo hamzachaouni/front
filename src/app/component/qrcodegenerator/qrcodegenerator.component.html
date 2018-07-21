@@ -1,0 +1,1333 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- start bar -->
+<div class="bar">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link nav-link-bordere nav-link-left"href="#">
+              <div [class.span]="bar_active == 'whyqrcodes'" (click)="bar_active = 'whyqrcodes'">CHOOSE QR CODE CATEGORY</div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-bordere" href="#">
+              <div [class.span]="bar_active == 'features'" (click)="bar_active = 'features'">ENTRER CONTENT</div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-bordere" href="#">
+              <div [class.span]="bar_active == 'support'" (click)="bar_active = 'support'">DESING-DOWLOAD</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<!-- end bar -->
+
+<!-- start srcode-text -->
+<div class="srcode-text">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <h1>QR Code Generator</h1>
+        <p>Create custom designed QR Codes with Scanova's QR Code Generator to attract more scans</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end srcode-text -->
+
+<!-- start bar-choix-srcodes -->
+<div class="bar-choix-srcodes">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+    </button>
+      
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a [class.active]="choix == 'recommended'" class="nav-link" (click)="choix = 'recommended'">RECOMMENDED</a>
+        </li>
+        <li class="nav-item">
+          <a [class.active]="choix == 'all'" class="nav-link" (click)="choix = 'all'">ALL</a>
+        </li>
+        <li class="nav-item">
+          <a [class.active]="choix == 'promotion'" class="nav-link" (click)="choix = 'promotion'">PROMOTION</a>
+        </li>
+        <li class="nav-item">
+          <a [class.active]="choix == 'social'" class="nav-link"  (click)="choix = 'social'" >SOCIAL</a>
+        </li>
+        <li class="nav-item">
+          <a [class.active]="choix == 'product'" class="nav-link" (click)="choix = 'product'">PRODUCT/SERVICE</a>
+        </li>
+        <li class="nav-item">
+          <a [class.active]="choix == 'business'" class="nav-link" (click)="choix = 'business'">BUSINESS</a>
+        </li>
+        <li class="nav-item">
+          <a [class.active]="choix == 'personal'" class="nav-link" (click)="choix = 'personal'">PERSONAL</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<!-- end bar-choix-srcodes -->
+<!-- start choix-qrcode-recommended -->
+<section class="container">
+  <div class="row active-with-click choix-qrcode-recommended">
+      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngIf="choix == 'all' || choix == 'personal' || choix == 'business' || choix == 'recommended' || choix == 'promotion' || choix == 'product'">
+        <div class="box">
+            <div class="imgbox">
+                <a routerLink="/create/url"><img src="{{ website }}" class="img-responsive" width="100%" height="450px"></a>
+            </div>
+            <div class="content">
+                <h3>Website URL</h3>
+                <p>When scanned, redirects user<br> to a website ...</p>
+                <a routerLink="/create/url" class="btn btn-primary">Go Greate</a>
+            </div>
+            <div class="content-title">
+                <h3>Website URL</h3>
+            </div>
+        </div> 
+        <!--<article class="material-card Red">
+              <h2>
+                  <span>Website URL</span>
+                  <strong>
+                          <i class="fa fa-fw fa-star"></i>
+                                  The Deer Hunter
+                      </strong>
+                  </h2>
+                  <a routerLink="/create/url"><div class="mc-content">
+                      <div class="img-container">
+                          <img class="img-responsive" src="{{ image }}"> 
+                      </div>
+                      <div class="mc-description">
+                              When scanned, redirects user to a website ...
+                      </div>
+                  </div> </a>
+                  <a class="mc-btn-action">
+                      <i class="fa fa-bars"></i>
+                  </a>
+                  <div class="mc-footer">
+                      <h4>
+                          Social
+                      </h4>
+                      <a class="fa fa-fw fa-facebook"></a>
+                      <a class="fa fa-fw fa-twitter"></a>
+                      <a class="fa fa-fw fa-linkedin"></a>
+                      <a class="fa fa-fw fa-google-plus"></a>
+                  </div>
+                      </article> -->
+          </div>
+
+
+
+
+          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngIf="choix == 'all' || choix == 'business' || choix == 'recommended'">
+            <div class="box">
+                <div class="imgbox">
+                    <a routerLink="/create/googlemaps"><img src="{{ googlemaps }}" class="img-responsive" width="100%" height="450px"></a>
+                </div>
+                <div class="content">
+                    <h3>Google Maps</h3>
+                    <p>When scanned, redirects user <br>to specified location coordinates ...</p>
+                    <a routerLink="/create/googlemaps" class="btn btn-primary">Go Greate</a>
+                </div>
+                <div class="content-title">
+                    <h3>Google Maps</h3>
+                </div>
+            </div>       
+            <!--<article class="material-card Red">
+                      <h2>
+                          <span>Google Maps</span>
+                          <strong>
+                                  <i class="fa fa-fw fa-star"></i>
+                                          The Deer Hunter
+                              </strong>
+                      </h2>
+                      <div class="mc-content">
+                          <div class="img-container">
+                            <a href="/hhh"><img class="img-responsive" src="{{ image }}"></a>
+                          </div>
+                          <div class="mc-description">
+                                  When scanned, redirects user to specified location coordinates ...
+                          </div>
+                      </div>
+                      <a class="mc-btn-action">
+                          <i class="fa fa-bars"></i>
+                      </a>
+                      <div class="mc-footer">
+                          <h4>
+                              Social
+                          </h4>
+                          <a class="fa fa-fw fa-facebook"></a>
+                          <a class="fa fa-fw fa-twitter"></a>
+                          <a class="fa fa-fw fa-linkedin"></a>
+                          <a class="fa fa-fw fa-google-plus"></a>
+                      </div>
+                          </article>-->
+              </div>
+
+
+
+
+              <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngIf="choix == 'all' || choix == 'business' || choix == 'recommended' || choix == 'product'">
+                <div class="box">
+                    <div class="imgbox">
+                        <a routerLink="/create/pdf"><img src="{{ pdf }}" class="img-responsive" width="100%" height="450px"></a>
+                    </div>
+                    <div class="content">
+                        <h3>PDF</h3>
+                        <p>When scanned, redirects user <br> to uploaded PDF file ...</p>
+                        <a routerLink="/create/pdf" class="btn btn-primary">Go Greate</a>
+                    </div>
+                    <div class="content-title">
+                        <h3>PDF</h3>
+                    </div>
+                </div>           
+                <!--<article class="material-card Red">
+                          <h2>
+                              <span>PDF</span>
+                              <strong>
+                                      <i class="fa fa-fw fa-star"></i>
+                                              The Deer Hunter
+                                  </strong>
+                          </h2>
+                          <div class="mc-content">
+                              <div class="img-container">
+                                <a href=""><img class="img-responsive" src="{{ image }}"></a>
+                              </div>
+                              <div class="mc-description">
+                                      When scanned, redirects user to uploaded PDF file ...
+                              </div>
+                          </div>
+                          <a class="mc-btn-action">
+                              <i class="fa fa-bars"></i>
+                          </a>
+                          <div class="mc-footer">
+                              <h4>
+                                  Social
+                              </h4>
+                              <a class="fa fa-fw fa-facebook"></a>
+                              <a class="fa fa-fw fa-twitter"></a>
+                              <a class="fa fa-fw fa-linkedin"></a>
+                              <a class="fa fa-fw fa-google-plus"></a>
+                          </div>
+                              </article>-->
+                  </div>
+
+
+
+                  <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngIf="choix == 'all' || choix == 'recommended' || choix == 'promotion' || choix == 'product'">
+                    <div class="box">
+                        <div class="imgbox">
+                            <a routerLink="/create/image"><img src="{{ image }}" class="img-responsive" width="100%" height="450px"></a>
+                        </div>
+                        <div class="content">
+                            <h3>Images</h3>
+                            <p>When scanned, redirects user <br> to uploaded image file ...</p>
+                            <a routerLink="/create/image" class="btn btn-primary">Go Greate</a>
+                        </div>
+                        <div class="content-title">
+                            <h3>Images</h3>
+                        </div>
+                    </div>         
+                    <!--<article class="material-card Red">
+                              <h2>
+                                  <span>Images</span>
+                                  <strong>
+                                          <i class="fa fa-fw fa-star"></i>
+                                                  The Deer Hunter
+                                      </strong>
+                              </h2>
+                              <div class="mc-content">
+                                  <div class="img-container">
+                                    <a href=""><img class="img-responsive" src="{{ image }}"></a>
+                                  </div>
+                                  <div class="mc-description">
+                                          When scanned, redirects user to uploaded image file ...
+                                  </div>
+                              </div>
+                              <a class="mc-btn-action">
+                                  <i class="fa fa-bars"></i>
+                              </a>
+                              <div class="mc-footer">
+                                  <h4>
+                                      Social
+                                  </h4>
+                                  <a class="fa fa-fw fa-facebook"></a>
+                                  <a class="fa fa-fw fa-twitter"></a>
+                                  <a class="fa fa-fw fa-linkedin"></a>
+                                  <a class="fa fa-fw fa-google-plus"></a>
+                              </div>
+                                  </article>-->
+                      </div>
+
+
+                      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngIf="choix == 'all' || choix == 'personal' || choix == 'business' || choix == 'recommended' || choix == 'promotion' || choix == 'social'">
+                        <div class="box">
+                            <div class="imgbox">
+                                <a routerLink="/create/smedia"><img src="{{ sml }}" class="img-responsive" width="100%" height="450px"></a>
+                            </div>
+                            <div class="content">
+                                <h3>Social Media Links</h3>
+                                <p>When scanned, redirects user <br>to online social media profiles ...</p>
+                                <a routerLink="/create/smedia" class="btn btn-primary">Go Greate</a>
+                            </div>
+                            <div class="content-title">
+                                <h3>Social Media Links</h3>
+                            </div>
+                        </div>       
+                        <!--<article class="material-card Red">
+                                  <h2>
+                                      <span>Social Media Links</span>
+                                      <strong>
+                                              <i class="fa fa-fw fa-star"></i>
+                                                      The Deer Hunter
+                                          </strong>
+                                  </h2>
+                                  <div class="mc-content">
+                                      <div class="img-container">
+                                        <a href=""><img class="img-responsive" src="{{ image }}"></a>
+                                      </div>
+                                      <div class="mc-description">
+                                              When scanned, redirects user to online social media profiles ...
+                                      </div>
+                                  </div>
+                                  <a class="mc-btn-action">
+                                      <i class="fa fa-bars"></i>
+                                  </a>
+                                  <div class="mc-footer">
+                                      <h4>
+                                          Social
+                                      </h4>
+                                      <a class="fa fa-fw fa-facebook"></a>
+                                      <a class="fa fa-fw fa-twitter"></a>
+                                      <a class="fa fa-fw fa-linkedin"></a>
+                                      <a class="fa fa-fw fa-google-plus"></a>
+                                  </div>
+                                      </article>-->
+                          </div>
+
+                          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngIf="choix == 'all' || choix == 'personal' || choix == 'business' || choix == 'recommended' || choix == 'social'">
+                            <div class="box">
+                                <div class="imgbox">
+                                    <a routerLink="/create/vcardprofile"><img src="{{ vcard }}" class="img-responsive" width="100%" height="450px"></a>
+                                </div>
+                                <div class="content">
+                                    <h3>Vcard Profile</h3>
+                                    <p>When scanned, redirects user to<br> online visiting card details ...</p>
+                                    <a routerLink="/create/vcardprofile" class="btn btn-primary">Go Greate</a>
+                                </div>
+                                <div class="content-title">
+                                    <h3>Vcard Profile</h3>
+                                </div>
+                            </div>        
+                            <!--<article class="material-card Red">
+                                      <h2>
+                                          <span>Vcard Profile</span>
+                                          <strong>
+                                                  <i class="fa fa-fw fa-star"></i>
+                                                          The Deer Hunter
+                                              </strong>
+                                      </h2>
+                                      <div class="mc-content">
+                                          <div class="img-container">
+                                            <a href=""><img class="img-responsive" src="{{ image }}"></a>
+                                          </div>
+                                          <div class="mc-description">
+                                                  When scanned, redirects user to online visiting card details ...
+                                          </div>
+                                      </div>
+                                      <a class="mc-btn-action">
+                                          <i class="fa fa-bars"></i>
+                                      </a>
+                                      <div class="mc-footer">
+                                          <h4>
+                                              Social
+                                          </h4>
+                                          <a class="fa fa-fw fa-facebook"></a>
+                                          <a class="fa fa-fw fa-twitter"></a>
+                                          <a class="fa fa-fw fa-linkedin"></a>
+                                          <a class="fa fa-fw fa-google-plus"></a>
+                                      </div>
+                                          </article>-->
+                              </div>
+
+                      
+                      
+
+                              <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngIf="choix == 'all' || choix == 'recommended' || choix == 'product'">
+                                <div class="box">
+                                    <div class="imgbox">
+                                        <a routerLink="/create/text"><img src="{{ txt }}" class="img-responsive" width="100%" height="450px"></a>
+                                    </div>
+                                    <div class="content">
+                                        <h3>Formatted Text</h3>
+                                        <p>When scanned, shows the <br>specified content ...</p>
+                                        <a routerLink="/create/text" class="btn btn-primary">Go Greate</a>
+                                    </div>
+                                    <div class="content-title">
+                                        <h3>Formatted Text</h3>
+                                    </div>
+                                </div>          
+                                <!--<article class="material-card Red">
+                                          <h2>
+                                              <span>Formatted Text</span>
+                                              <strong>
+                                                      <i class="fa fa-fw fa-star"></i>
+                                                              The Deer Hunter
+                                                  </strong>
+                                          </h2>
+                                          <div class="mc-content">
+                                              <div class="img-container">
+                                                <a href=""><img class="img-responsive" src="{{ image }}"></a>
+                                              </div>
+                                              <div class="mc-description">
+                                                      When scanned, shows the specified content ...
+                                              </div>
+                                          </div>
+                                          <a class="mc-btn-action">
+                                              <i class="fa fa-bars"></i>
+                                          </a>
+                                          <div class="mc-footer">
+                                              <h4>
+                                                  Social
+                                              </h4>
+                                              <a class="fa fa-fw fa-facebook"></a>
+                                              <a class="fa fa-fw fa-twitter"></a>
+                                              <a class="fa fa-fw fa-linkedin"></a>
+                                              <a class="fa fa-fw fa-google-plus"></a>
+                                          </div>
+                                              </article>-->
+                                  </div>
+
+
+                  
+                                  <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngIf="choix == 'all' || choix == 'recommended' || choix == 'product'">
+                                    <div class="box">
+                                        <div class="imgbox">
+                                            <a routerLink="/create/audio"><img src="{{ audio }}" class="img-responsive" width="100%" height="450px"></a>
+                                        </div>
+                                        <div class="content">
+                                            <h3>App Store Links</h3>
+                                            <p>When scanned, redirects user <br>to added app download links ...</p>
+                                            <a routerLink="/create/audio" class="btn btn-primary">Go Greate</a>
+                                        </div>
+                                        <div class="content-title">
+                                            <h3>App Store Links</h3>
+                                        </div>
+                                    </div>       
+                                    <!--<article class="material-card Red">
+                                              <h2>
+                                                  <span>App Store Links</span>
+                                                  <strong>
+                                                          <i class="fa fa-fw fa-star"></i>
+                                                                  The Deer Hunter
+                                                      </strong>
+                                              </h2>
+                                              <div class="mc-content">
+                                                  <div class="img-container">
+                                                    <a href=""><img class="img-responsive" src="{{ image }}"></a>
+                                                  </div>
+                                                  <div class="mc-description">
+                                                          When scanned, redirects user to added app download links ...
+                                                  </div>
+                                              </div>
+                                              <a class="mc-btn-action">
+                                                  <i class="fa fa-bars"></i>
+                                              </a>
+                                              <div class="mc-footer">
+                                                  <h4>
+                                                      Social
+                                                  </h4>
+                                                  <a class="fa fa-fw fa-facebook"></a>
+                                                  <a class="fa fa-fw fa-twitter"></a>
+                                                  <a class="fa fa-fw fa-linkedin"></a>
+                                                  <a class="fa fa-fw fa-google-plus"></a>
+                                              </div>
+                                                  </article>-->
+                                      </div>
+
+          
+                                      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngIf="choix == 'all' || choix == 'product'">
+                                        <div class="box">
+                                            <div class="imgbox">
+                                                <a routerLink="/create/audio"><img src="{{ audio }}" class="img-responsive" width="100%" height="450px"></a>
+                                            </div>
+                                            <div class="content">
+                                                <h3>Audio</h3>
+                                                <p>When scanned, redirects user <br>to uploaded audio file ...</p>
+                                                <a routerLink="/create/audio" class="btn btn-primary">Go Greate</a>
+                                            </div>
+                                            <div class="content-title">
+                                                <h3>Audio</h3>
+                                            </div>
+                                        </div>       
+                                        <!--<article class="material-card Red">
+                                                  <h2>
+                                                      <span>Audio</span>
+                                                      <strong>
+                                                              <i class="fa fa-fw fa-star"></i>
+                                                                      The Deer Hunter
+                                                          </strong>
+                                                  </h2>
+                                                  <div class="mc-content">
+                                                      <div class="img-container">
+                                                        <a href=""><img class="img-responsive" src="{{ image }}"></a>
+                                                      </div>
+                                                      <div class="mc-description">
+                                                              When scanned, redirects user to uploaded audio file ...
+                                                      </div>
+                                                  </div>
+                                                  <a class="mc-btn-action">
+                                                      <i class="fa fa-bars"></i>
+                                                  </a>
+                                                  <div class="mc-footer">
+                                                      <h4>
+                                                          Social
+                                                      </h4>
+                                                      <a class="fa fa-fw fa-facebook"></a>
+                                                      <a class="fa fa-fw fa-twitter"></a>
+                                                      <a class="fa fa-fw fa-linkedin"></a>
+                                                      <a class="fa fa-fw fa-google-plus"></a>
+                                                  </div>
+                                                      </article>-->
+                                          </div>
+
+
+                                          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngIf="choix == 'all' || choix == 'promotion' || choix == 'social'">
+                                            <div class="box">
+                                                <div class="imgbox">
+                                                    <a routerLink="/create/facebook"><img src="{{ fb }}" class="img-responsive" width="100%" height="450px"></a>
+                                                </div>
+                                                <div class="content">
+                                                    <h3>Facebook</h3>
+                                                    <p>When scanned, redirects user <br>to the specified Facebook page ...</p>
+                                                    <a routerLink="/create/facebook" class="btn btn-primary">Go Greate</a>
+                                                </div>
+                                                <div class="content-title">
+                                                    <h3>Facebook</h3>
+                                                </div>
+                                            </div>         
+                                            <!--<article class="material-card Red">
+                                                      <h2>
+                                                          <span>Facebook</span>
+                                                          <strong>
+                                                                  <i class="fa fa-fw fa-star"></i>
+                                                                          The Deer Hunter
+                                                              </strong>
+                                                      </h2>
+                                                      <div class="mc-content">
+                                                          <div class="img-container">
+                                                            <a href=""><img class="img-responsive" src="{{ image }}"></a>
+                                                          </div>
+                                                          <div class="mc-description">
+                                                                  When scanned, redirects user to the specified Facebook page ...
+                                                          </div>
+                                                      </div>
+                                                      <a class="mc-btn-action">
+                                                          <i class="fa fa-bars"></i>
+                                                      </a>
+                                                      <div class="mc-footer">
+                                                          <h4>
+                                                              Social
+                                                          </h4>
+                                                          <a class="fa fa-fw fa-facebook"></a>
+                                                          <a class="fa fa-fw fa-twitter"></a>
+                                                          <a class="fa fa-fw fa-linkedin"></a>
+                                                          <a class="fa fa-fw fa-google-plus"></a>
+                                                      </div>
+                                                          </article>-->
+                                              </div>
+
+
+                                              <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngIf="choix == 'all' || choix == 'personal' || choix == 'business' || choix == 'social'">
+                                                <div class="box">
+                                                    <div class="imgbox">
+                                                        <a routerLink="/create/linkedin"><img src="{{ linked }}" class="img-responsive" width="100%" height="450px"></a>
+                                                    </div>
+                                                    <div class="content">
+                                                        <h3>LinkedIn</h3>
+                                                        <p>When scanned, redirects user <br>to Profile or Company Page ...</p>
+                                                        <a routerLink="/create/linkedin" class="btn btn-primary">Go Greate</a>
+                                                    </div>
+                                                    <div class="content-title">
+                                                        <h3>LinkedIn</h3>
+                                                    </div>
+                                                </div>        
+                                                <!--<article class="material-card Red">
+                                                          <h2>
+                                                              <span>LinkedIn</span>
+                                                              <strong>
+                                                                      <i class="fa fa-fw fa-star"></i>
+                                                                              The Deer Hunter
+                                                                  </strong>
+                                                          </h2>
+                                                          <div class="mc-content">
+                                                              <div class="img-container">
+                                                                <a href=""><img class="img-responsive" src="{{ image }}"></a>
+                                                              </div>
+                                                              <div class="mc-description">
+                                                                      When scanned, redirects user to Profile or Company Page ...
+                                                              </div>
+                                                          </div>
+                                                          <a class="mc-btn-action">
+                                                              <i class="fa fa-bars"></i>
+                                                          </a>
+                                                          <div class="mc-footer">
+                                                              <h4>
+                                                                  Social
+                                                              </h4>
+                                                              <a class="fa fa-fw fa-facebook"></a>
+                                                              <a class="fa fa-fw fa-twitter"></a>
+                                                              <a class="fa fa-fw fa-linkedin"></a>
+                                                              <a class="fa fa-fw fa-google-plus"></a>
+                                                          </div>
+                                                              </article>-->
+                                                  </div>
+
+
+                                                  <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngIf="choix == 'all' || choix == 'promotion' || choix == 'social' || choix == 'product'">
+                                                    <div class="box">
+                                                        <div class="imgbox">
+                                                            <a routerLink="/create/youtube"><img src="{{ youtube }}" class="img-responsive" width="100%" height="450px"></a>
+                                                        </div>
+                                                        <div class="content">
+                                                            <h3>Youtube</h3>
+                                                            <p>When scanned, redirects user<br> to specified YouTube video URL ...</p>
+                                                            <a routerLink="/create/youtube" class="btn btn-primary">Go Greate</a>
+                                                        </div>
+                                                        <div class="content-title">
+                                                            <h3>Youtube</h3>
+                                                        </div>
+                                                    </div>        
+                                                    <!--<article class="material-card Red">
+                                                              <h2>
+                                                                  <span>Youtube</span>
+                                                                  <strong>
+                                                                          <i class="fa fa-fw fa-star"></i>
+                                                                                  The Deer Hunter
+                                                                      </strong>
+                                                              </h2>
+                                                              <div class="mc-content">
+                                                                  <div class="img-container">
+                                                                    <a href=""><img class="img-responsive" src="{{ image }}"></a>
+                                                                  </div>
+                                                                  <div class="mc-description">
+                                                                          When scanned, redirects user to specified YouTube video URL ...
+                                                                  </div>
+                                                              </div>
+                                                              <a class="mc-btn-action">
+                                                                  <i class="fa fa-bars"></i>
+                                                              </a>
+                                                              <div class="mc-footer">
+                                                                  <h4>
+                                                                      Social
+                                                                  </h4>
+                                                                  <a class="fa fa-fw fa-facebook"></a>
+                                                                  <a class="fa fa-fw fa-twitter"></a>
+                                                                  <a class="fa fa-fw fa-linkedin"></a>
+                                                                  <a class="fa fa-fw fa-google-plus"></a>
+                                                              </div>
+                                                                  </article>-->
+                                                      </div>
+
+
+                                                      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngIf="choix == 'all' || choix == 'social'">
+                                                        <div class="box">
+                                                            <div class="imgbox">
+                                                                <a routerLink="/create/twitter"><img src="{{ tw }}" class="img-responsive" width="100%" height="450px"></a>
+                                                            </div>
+                                                            <div class="content">
+                                                                <h3>Twitter</h3>
+                                                                <p>When scanned, prompts user to<br> tweet the specified content ...</p>
+                                                                <a routerLink="/create/twitter" class="btn btn-primary">Go Greate</a>
+                                                            </div>
+                                                            <div class="content-title">
+                                                                <h3>Twitter</h3>
+                                                            </div>
+                                                        </div>        
+                                                        <!--<article class="material-card Red">
+                                                                  <h2>
+                                                                      <span>Twitter</span>
+                                                                      <strong>
+                                                                              <i class="fa fa-fw fa-star"></i>
+                                                                                      The Deer Hunter
+                                                                          </strong>
+                                                                  </h2>
+                                                                  <div class="mc-content">
+                                                                      <div class="img-container">
+                                                                        <a href=""><img class="img-responsive" src="{{ image }}"></a>
+                                                                      </div>
+                                                                      <div class="mc-description">
+                                                                              When scanned, prompts user to tweet the specified content ...
+                                                                      </div>
+                                                                  </div>
+                                                                  <a class="mc-btn-action">
+                                                                      <i class="fa fa-bars"></i>
+                                                                  </a>
+                                                                  <div class="mc-footer">
+                                                                      <h4>
+                                                                          Social
+                                                                      </h4>
+                                                                      <a class="fa fa-fw fa-facebook"></a>
+                                                                      <a class="fa fa-fw fa-twitter"></a>
+                                                                      <a class="fa fa-fw fa-linkedin"></a>
+                                                                      <a class="fa fa-fw fa-google-plus"></a>
+                                                                  </div>
+                                                                      </article>-->
+                                                          </div>
+
+
+                                                          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngIf="choix == 'all' || choix == 'promotion' || choix == 'product'">
+                                                            <div class="box">
+                                                                <div class="imgbox">
+                                                                    <a routerLink="/create/coupon"><img src="{{ coupon }}" class="img-responsive" width="100%" height="450px"></a>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <h3>Coupon</h3>
+                                                                    <p>When scanned, shows the <br>specified coupon details ...</p>
+                                                                    <a routerLink="/create/coupon" class="btn btn-primary">Go Greate</a>
+                                                                </div>
+                                                                <div class="content-title">
+                                                                    <h3>Coupon</h3>
+                                                                </div>
+                                                            </div>     
+                                                            <!-- <article class="material-card Red">
+                                                                      <h2>
+                                                                          <span>Coupon</span>
+                                                                          <strong>
+                                                                                  <i class="fa fa-fw fa-star"></i>
+                                                                                          The Deer Hunter
+                                                                              </strong>
+                                                                      </h2>
+                                                                      <div class="mc-content">
+                                                                          <div class="img-container">
+                                                                            <a href=""><img class="img-responsive" src="{{ image }}"></a>
+                                                                          </div>
+                                                                          <div class="mc-description">
+                                                                                  When scanned, shows the specified coupon details ...
+                                                                          </div>
+                                                                      </div>
+                                                                      <a class="mc-btn-action">
+                                                                          <i class="fa fa-bars"></i>
+                                                                      </a>
+                                                                      <div class="mc-footer">
+                                                                          <h4>
+                                                                              Social
+                                                                          </h4>
+                                                                          <a class="fa fa-fw fa-facebook"></a>
+                                                                          <a class="fa fa-fw fa-twitter"></a>
+                                                                          <a class="fa fa-fw fa-linkedin"></a>
+                                                                          <a class="fa fa-fw fa-google-plus"></a>
+                                                                      </div>
+                                                                          </article>-->
+                                                              </div>
+
+
+                                                              <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngIf="choix == 'all' || choix == 'personal' || choix == 'promotion'">
+                                                                <div class="box">
+                                                                    <div class="imgbox">
+                                                                        <a routerLink="/create/sms"><img src="{{ sms }}" class="img-responsive" width="100%" height="450px"></a>
+                                                                    </div>
+                                                                    <div class="content">
+                                                                        <h3>SMS</h3>
+                                                                        <p>When scanned, prompts user to<br> send SMS to given phone number ...</p>
+                                                                        <a routerLink="/create/sms" class="btn btn-primary">Go Greate</a>
+                                                                    </div>
+                                                                    <div class="content-title">
+                                                                        <h3>SMS</h3>
+                                                                    </div>
+                                                                </div>        
+                                                                <!--<article class="material-card Red">
+                                                                          <h2>
+                                                                              <span>SMS</span>
+                                                                              <strong>
+                                                                                      <i class="fa fa-fw fa-star"></i>
+                                                                                              The Deer Hunter
+                                                                                  </strong>
+                                                                          </h2>
+                                                                          <div class="mc-content">
+                                                                              <div class="img-container">
+                                                                                <a href=""><img class="img-responsive" src="{{ image }}"></a>
+                                                                              </div>
+                                                                              <div class="mc-description">
+                                                                                      When scanned, prompts user to send SMS to given phone number ...
+                                                                              </div>
+                                                                          </div>
+                                                                          <a class="mc-btn-action">
+                                                                              <i class="fa fa-bars"></i>
+                                                                          </a>
+                                                                          <div class="mc-footer">
+                                                                              <h4>
+                                                                                  Social
+                                                                              </h4>
+                                                                              <a class="fa fa-fw fa-facebook"></a>
+                                                                              <a class="fa fa-fw fa-twitter"></a>
+                                                                              <a class="fa fa-fw fa-linkedin"></a>
+                                                                              <a class="fa fa-fw fa-google-plus"></a>
+                                                                          </div>
+                                                                              </article>-->
+                                                                  </div>
+
+                                                                  <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngIf="choix == 'all' || choix == 'personal'">
+                                                                    <div class="box">
+                                                                        <div class="imgbox">
+                                                                            <a routerLink="/create/phone"><img src="{{ phonenum }}" class="img-responsive" width="100%" height="450px"></a>
+                                                                        </div>
+                                                                        <div class="content">
+                                                                            <h3>Phone Number</h3>
+                                                                            <p>When scanned, shows the<br> specified phone number ...</p>
+                                                                            <a routerLink="/create/phone" class="btn btn-primary">Go Greate</a>
+                                                                        </div>
+                                                                        <div class="content-title">
+                                                                            <h3>Phone Number</h3>
+                                                                        </div>
+                                                                    </div>        
+                                                                    <!--<article class="material-card Red">
+                                                                              <h2>
+                                                                                  <span>Phone Number</span>
+                                                                                  <strong>
+                                                                                          <i class="fa fa-fw fa-star"></i>
+                                                                                                  The Deer Hunter
+                                                                                      </strong>
+                                                                              </h2>
+                                                                              <div class="mc-content">
+                                                                                  <div class="img-container">
+                                                                                    <a href=""><img class="img-responsive" src="{{ image }}"></a>
+                                                                                  </div>
+                                                                                  <div class="mc-description">
+                                                                                          When scanned, shows the specified phone number ...
+                                                                                  </div>
+                                                                              </div>
+                                                                              <a class="mc-btn-action">
+                                                                                  <i class="fa fa-bars"></i>
+                                                                              </a>
+                                                                              <div class="mc-footer">
+                                                                                  <h4>
+                                                                                      Social
+                                                                                  </h4>
+                                                                                  <a class="fa fa-fw fa-facebook"></a>
+                                                                                  <a class="fa fa-fw fa-twitter"></a>
+                                                                                  <a class="fa fa-fw fa-linkedin"></a>
+                                                                                  <a class="fa fa-fw fa-google-plus"></a>
+                                                                              </div>
+                                                                                  </article>-->
+                                                                      </div>
+
+
+                                                                      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngIf="choix == 'all' || choix == 'personal'">
+                                                                        <div class="box">
+                                                                            <div class="imgbox">
+                                                                                <a routerLink="/create/email"><img src="{{ email }}" class="img-responsive" width="100%" height="450px"></a>
+                                                                            </div>
+                                                                            <div class="content">
+                                                                                <h3>Email Adress</h3>
+                                                                                <p>When scanned, prompts user<br> to email specified content ...</p>
+                                                                                <a routerLink="/create/email" class="btn btn-primary">Go Greate</a>
+                                                                            </div>
+                                                                            <div class="content-title">
+                                                                                <h3>Email Adress</h3>
+                                                                            </div>
+                                                                        </div>       
+                                                                        <!--<article class="material-card Red">
+                                                                                  <h2>
+                                                                                      <span>Email Adress</span>
+                                                                                      <strong>
+                                                                                              <i class="fa fa-fw fa-star"></i>
+                                                                                                      The Deer Hunter
+                                                                                          </strong>
+                                                                                  </h2>
+                                                                                  <div class="mc-content">
+                                                                                      <div class="img-container">
+                                                                                        <a href=""><img class="img-responsive" src="{{ image }}"></a>
+                                                                                      </div>
+                                                                                      <div class="mc-description">
+                                                                                              When scanned, prompts user to email specified content ...
+                                                                                      </div>
+                                                                                  </div>
+                                                                                  <a class="mc-btn-action">
+                                                                                      <i class="fa fa-bars"></i>
+                                                                                  </a>
+                                                                                  <div class="mc-footer">
+                                                                                      <h4>
+                                                                                          Social
+                                                                                      </h4>
+                                                                                      <a class="fa fa-fw fa-facebook"></a>
+                                                                                      <a class="fa fa-fw fa-twitter"></a>
+                                                                                      <a class="fa fa-fw fa-linkedin"></a>
+                                                                                      <a class="fa fa-fw fa-google-plus"></a>
+                                                                                  </div>
+                                                                                      </article>-->
+                                                                          </div>
+
+                                                                          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngIf="choix == 'all' || choix == 'business' || choix == 'promotion'">
+                                                                            <div class="box">
+                                                                                <div class="imgbox">
+                                                                                    <a routerLink="/create/calendar"><img src="{{ calendar }}" class="img-responsive" width="100%" height="450px"></a>
+                                                                                </div>
+                                                                                <div class="content">
+                                                                                    <h3>Calendar</h3>
+                                                                                    <p>When scanned, redirects user<br> to specified event details ...</p>
+                                                                                    <a routerLink="/create/calendar" class="btn btn-primary">Go Greate</a>
+                                                                                </div>
+                                                                                <div class="content-title">
+                                                                                    <h3>Calendar</h3>
+                                                                                </div>
+                                                                            </div>          
+                                                                            <!--<article class="material-card Red">
+                                                                                      <h2>
+                                                                                          <span>Calendar</span>
+                                                                                          <strong>
+                                                                                                  <i class="fa fa-fw fa-star"></i>
+                                                                                                          The Deer Hunter
+                                                                                              </strong>
+                                                                                      </h2>
+                                                                                      <div class="mc-content">
+                                                                                          <div class="img-container">
+                                                                                            <a href=""><img class="img-responsive" src="{{ image }}"></a>
+                                                                                          </div>
+                                                                                          <div class="mc-description">
+                                                                                                  When scanned, redirects user to specified event details ...
+                                                                                          </div>
+                                                                                      </div>
+                                                                                      <a class="mc-btn-action">
+                                                                                          <i class="fa fa-bars"></i>
+                                                                                      </a>
+                                                                                      <div class="mc-footer">
+                                                                                          <h4>
+                                                                                              Social
+                                                                                          </h4>
+                                                                                          <a class="fa fa-fw fa-facebook"></a>
+                                                                                          <a class="fa fa-fw fa-twitter"></a>
+                                                                                          <a class="fa fa-fw fa-linkedin"></a>
+                                                                                          <a class="fa fa-fw fa-google-plus"></a>
+                                                                                      </div>
+                                                                                          </article>-->
+                                                                              </div>
+
+                                                                              <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngIf="choix == 'all' || choix == 'business'">
+                                                                                <div class="box">
+                                                                                    <div class="imgbox">
+                                                                                        <a routerLink="/create/svcard"><img src="{{ svcard }}" class="img-responsive" width="100%" height="450px"></a>
+                                                                                    </div>
+                                                                                    <div class="content">
+                                                                                        <h3>Simple Vcard</h3>
+                                                                                        <p>When scanned, redirects user <br>to the specified visiting card details ...</p>
+                                                                                        <a routerLink="/create/svcard" class="btn btn-primary">Go Greate</a>
+                                                                                    </div>
+                                                                                    <div class="content-title">
+                                                                                        <h3>Simple Vcard</h3>
+                                                                                    </div>
+                                                                                </div>     
+                                                                                <!--<article class="material-card Red">
+                                                                                          <h2>
+                                                                                              <span>Simple Vcard</span>
+                                                                                              <strong>
+                                                                                                      <i class="fa fa-fw fa-star"></i>
+                                                                                                              The Deer Hunter
+                                                                                                  </strong>
+                                                                                          </h2>
+                                                                                          <div class="mc-content">
+                                                                                              <div class="img-container">
+                                                                                                <a href=""><img class="img-responsive" src="{{ image }}"></a>
+                                                                                              </div>
+                                                                                              <div class="mc-description">
+                                                                                                      When scanned, redirects user to the specified visiting card details ...
+                                                                                              </div>
+                                                                                          </div>
+                                                                                          <a class="mc-btn-action">
+                                                                                              <i class="fa fa-bars"></i>
+                                                                                          </a>
+                                                                                          <div class="mc-footer">
+                                                                                              <h4>
+                                                                                                  Social
+                                                                                              </h4>
+                                                                                              <a class="fa fa-fw fa-facebook"></a>
+                                                                                              <a class="fa fa-fw fa-twitter"></a>
+                                                                                              <a class="fa fa-fw fa-linkedin"></a>
+                                                                                              <a class="fa fa-fw fa-google-plus"></a>
+                                                                                          </div>
+                                                                                              </article>-->
+                                                                                  </div>
+
+                                                                                  <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngIf="choix == 'all' || choix == 'personal'">
+                                                                                    <div class="box">
+                                                                                        <div class="imgbox">
+                                                                                            <a routerLink="/create/wifi"><img src="{{ wifi }}" class="img-responsive" width="100%" height="450px"></a>
+                                                                                        </div>
+                                                                                        <div class="content">
+                                                                                            <h3>Wifi</h3>
+                                                                                            <p>When scanned, shows the <br>specified WiFi details ...</p>
+                                                                                            <a routerLink="/create/wifi" class="btn btn-primary">Go Greate</a>
+                                                                                        </div>
+                                                                                        <div class="content-title">
+                                                                                            <h3>Wifi</h3>
+                                                                                        </div>
+                                                                                    </div>        
+                                                                                    <!--<article class="material-card Red">
+                                                                                              <h2>
+                                                                                                  <span>Wifi</span>
+                                                                                                 <strong>
+                                                                                                          <i class="fa fa-fw fa-star"></i>
+                                                                                                                  The Deer Hunter
+                                                                                                      </strong>
+                                                                                              </h2>
+                                                                                              <div class="mc-content">
+                                                                                                  <div class="img-container">
+                                                                                                    <a href=""><img class="img-responsive" src="{{ image }}"></a>
+                                                                                                  </div>
+                                                                                                  <div class="mc-description">
+                                                                                                          When scanned, shows the specified WiFi details ...
+                                                                                                  </div>
+                                                                                              </div>
+                                                                                              <a class="mc-btn-action">
+                                                                                                  <i class="fa fa-bars"></i>
+                                                                                              </a>
+                                                                                             <div class="mc-footer">
+                                                                                                  <h4>
+                                                                                                      Social
+                                                                                                  </h4>
+                                                                                                  <a class="fa fa-fw fa-facebook"></a>
+                                                                                                  <a class="fa fa-fw fa-twitter"></a>
+                                                                                                  <a class="fa fa-fw fa-linkedin"></a>
+                                                                                                  <a class="fa fa-fw fa-google-plus"></a>
+                                                                                              </div>
+                                                                                                  </article>-->
+                                                                                      </div>
+
+                                                                                      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngIf="choix == 'all' || choix == 'product'">
+                                                                                        <div class="box">
+                                                                                            <div class="imgbox">
+                                                                                                <a routerLink="/create/text"><img src="{{ stxt }}" class="img-responsive" width="100%" height="450px"></a>
+                                                                                            </div>
+                                                                                            <div class="content">
+                                                                                                <h3>Simple Text</h3>
+                                                                                                <p>When scanned, shows the<br> specified text ...</p>
+                                                                                                <a routerLink="/create/text" class="btn btn-primary">Go Greate</a>
+                                                                                            </div>
+                                                                                            <div class="content-title">
+                                                                                                <h3>Simple Text</h3>
+                                                                                            </div>
+                                                                                        </div>         
+                                                                                        <!--<article class="material-card Red">
+                                                                                                  <h2>
+                                                                                                      <span>Simple Text</span>
+                                                                                                      <strong>
+                                                                                                              <i class="fa fa-fw fa-star"></i>
+                                                                                                                      The Deer Hunter
+                                                                                                          </strong>
+                                                                                                  </h2>
+                                                                                                  <div class="mc-content">
+                                                                                                      <div class="img-container">
+                                                                                                        <a href=""><img class="img-responsive" src="{{ image }}"></a>
+                                                                                                      </div>
+                                                                                                      <div class="mc-description">
+                                                                                                              When scanned, shows the specified text ...
+                                                                                                      </div>
+                                                                                                  </div>
+                                                                                                  <a class="mc-btn-action">
+                                                                                                      <i class="fa fa-bars"></i>
+                                                                                                  </a>
+                                                                                                  <div class="mc-footer">
+                                                                                                      <h4>
+                                                                                                          Social
+                                                                                                      </h4>
+                                                                                                      <a class="fa fa-fw fa-facebook"></a>
+                                                                                                      <a class="fa fa-fw fa-twitter"></a>
+                                                                                                      <a class="fa fa-fw fa-linkedin"></a>
+                                                                                                      <a class="fa fa-fw fa-google-plus"></a>
+                                                                                                  </div>
+                                                                                                      </article>-->
+                                                                                          </div>
+
+                                                                                          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngIf="choix == 'all' || choix == 'business' || choix == 'product'">
+                                                                                            <div class="box">
+                                                                                                <div class="imgbox">
+                                                                                                    <a routerLink="/create/paypal"><img src="{{ paypal }}" class="img-responsive" width="100%" height="450px"></a>
+                                                                                                </div>
+                                                                                                <div class="content">
+                                                                                                    <h3>Paypal</h3>
+                                                                                                    <p>When scanned, prompts user <br>to the pay specified PayPal account ...</p>
+                                                                                                    <a routerLink="/create/paypal" class="btn btn-primary">Go Greate</a>
+                                                                                                </div>
+                                                                                                <div class="content-title">
+                                                                                                    <h3>Paypal</h3>
+                                                                                                </div>
+                                                                                            </div>      
+                                                                                            <!--<article class="material-card Red">
+                                                                                                      <h2>
+                                                                                                          <span>Paypal</span>
+                                                                                                          <strong>
+                                                                                                                  <i class="fa fa-fw fa-star"></i>
+                                                                                                                          The Deer Hunter
+                                                                                                              </strong>
+                                                                                                      </h2>
+                                                                                                      <div class="mc-content">
+                                                                                                          <div class="img-container">
+                                                                                                            <a href=""><img class="img-responsive" src="{{ image }}"></a>
+                                                                                                          </div>
+                                                                                                          <div class="mc-description">
+                                                                                                                  When scanned, prompts user to the pay specified PayPal account ...
+                                                                                                          </div>
+                                                                                                      </div>
+                                                                                                      <a class="mc-btn-action">
+                                                                                                          <i class="fa fa-bars"></i>
+                                                                                                      </a>
+                                                                                                      <div class="mc-footer">
+                                                                                                          <h4>
+                                                                                                              Social
+                                                                                                          </h4>
+                                                                                                          <a class="fa fa-fw fa-facebook"></a>
+                                                                                                          <a class="fa fa-fw fa-twitter"></a>
+                                                                                                          <a class="fa fa-fw fa-linkedin"></a>
+                                                                                                          <a class="fa fa-fw fa-google-plus"></a>
+                                                                                                      </div>
+                                                                                                          </article>-->
+                                                                                              </div>
+
+                                                                                              <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngIf="choix == 'all' || choix == 'business'">
+                                                                                                <div class="box">
+                                                                                                    <div class="imgbox">
+                                                                                                        <a routerLink="/create/"><img src="{{ badress }}" class="img-responsive" width="100%" height="450px"></a>
+                                                                                                    </div>
+                                                                                                    <div class="content">
+                                                                                                        <h3>Bitcoin Adress</h3>
+                                                                                                        <p>When scanned, redirects the<br> user to the specified Bitcoin address ...</p>
+                                                                                                        <a routerLink="/create/" class="btn btn-primary">Go Greate</a>
+                                                                                                    </div>
+                                                                                                    <div class="content-title">
+                                                                                                        <h3>Bitcoin Adress</h3>
+                                                                                                    </div>
+                                                                                                </div>         
+                                                                                                <!--<article class="material-card Red">
+                                                                                                          <h2>
+                                                                                                              <span>Bitcoin Adress</span>
+                                                                                                              <strong>
+                                                                                                                      <i class="fa fa-fw fa-star"></i>
+                                                                                                                              The Deer Hunter
+                                                                                                                  </strong>
+                                                                                                          </h2>
+                                                                                                          <div class="mc-content">
+                                                                                                              <div class="img-container">
+                                                                                                                <a href=""><img class="img-responsive" src="{{ image }}"></a>
+                                                                                                              </div>
+                                                                                                              <div class="mc-description">
+                                                                                                                      When scanned, redirects the user to the specified Bitcoin address ...
+                                                                                                              </div>
+                                                                                                          </div>
+                                                                                                          <a class="mc-btn-action">
+                                                                                                              <i class="fa fa-bars"></i>
+                                                                                                          </a>
+                                                                                                          <div class="mc-footer">
+                                                                                                              <h4>
+                                                                                                                  Social
+                                                                                                              </h4>
+                                                                                                              <a class="fa fa-fw fa-facebook"></a>
+                                                                                                              <a class="fa fa-fw fa-twitter"></a>
+                                                                                                              <a class="fa fa-fw fa-linkedin"></a>
+                                                                                                              <a class="fa fa-fw fa-google-plus"></a>
+                                                                                                          </div>
+                                                                                                              </article>-->
+                                                                                                  </div>
+                  
+                 
+                  
+             
+             
+      </div>
+              
+  </section>
+
+  <!-- end choix -->
+<!-- start do-more -->
+<div class="do-more">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+              <div class="text-do-more-top">
+                <h2>Run end-to-end QR Code campaigns</h2>
+                <div class="para-top-do-more">Create, design, manage, and track QR Codes and landing pages in minutes</div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-12 text-center">
+              <a href="#">
+                <div class="card">
+                  <div class="card-body">
+                    <img alt="hh" src="{{ users }}">
+                    <div class="card-body-text">
+                      <h5 class="card-title">Lead Generation</h5>
+                      <p class="card-text">Capture high-potential Customer leads</p>
+                    </div>                   
+                  </div>
+                </div></a>
+            </div>
+            <div class="col-md-3 col-sm-12 text-center">
+              <a href="#">
+                <div class="card">
+                  <div class="card-body">
+                      <img alt="hh" src="{{ chita }}">
+                      <div class="card-body-text">
+                          
+                        <h5 class="card-title">Custom QR Code Design</h5>
+                        <p class="card-text">Create visually-appealing QR Codes to attract more scans</p>
+                      </div>
+                  </div>
+                </div></a>
+            </div>
+      
+            <div class="col-md-3 col-sm-12 text-center">
+              <a href="#">
+                <div class="card">
+                  <div class="card-body">
+                    <img alt="hh" src="{{ icone_23 }}">
+                    <div class="card-body-text">
+                      <h5 class="card-title">23 Content Categories</h5>
+                      <p class="card-text">Based on content, create upto 23 types of QR Codes</p>
+                    </div>
+                  </div>
+                </div></a>
+            </div>
+              
+          </div>
+      
+          <div class="row justify-content-center">
+      
+            <div class="col-md-3 col-sm-12 text-center">
+              <a href="#">
+                <div class="card">
+                  <div class="card-body">
+                    <img alt="hh" src="{{ sahm }}">
+                    <div class="card-body-text">
+                      <h5 class="card-title">Analytics</h5>
+                      <p class="card-text">View number of scans by date, geography and device</p>
+                    </div>
+                  </div>
+                </div></a>
+            </div>
+                  
+                  
+      
+            <div class="col-md-3 col-sm-12 text-center">
+              <a href="#">
+                <div class="card">
+                  <div class="card-body">
+                    <img alt="hh" src="{{ dynamic }}">
+                    <div class="card-body-text">
+                      <h5 class="card-title">Dynamic QR Codes</h5>
+                      <p class="card-text">Edit QR Code content anytime</p>
+                    </div>
+                  </div>
+                </div></a>
+            </div>
+      
+            <div class="col-md-3 col-sm-12 text-center">
+              <a href="#">
+                <div class="card">
+                  <div class="card-body">
+                    <img alt="hh" src="{{ tele }}">
+                      <div class="card-body-text">
+                        <h5 class="card-title">Landing Pages</h5>
+                        <p class="card-text">Use readymade landing pages for campaigns</p>
+                      </div>
+                  </div>
+                </div></a>
+            </div>
+          </div>
+      
+          <div class="button text-center">
+            <a class="btn btn-primary" href="#" role="button">SEE ALL FEATURES</a>
+          </div>
+        </div>
+      </div>
+      <!-- end do-more -->
+<!-- start faqs -->
+<div class="faqs">
+<div class="container">
+  <div class="row justify-content-center">
+      <div class="col-md-12 text-center">
+          <h2>FAQs Helpdesk</h2>
+          <div class="text-faqs-top">Get answers to your queries with our exhaustive FAQs helpdesk</div>
+      </div>
+      <div class="col-md-5 col-sm-12 text-faqs">
+          <h6>What will happen to my QR Codes after the 14-day free trial?</h6>
+          <div class="text-faqs-bottom">After the 14-day free trial ends, your Static QR Codes will continue to work but Dynamic QR Codes will expire. You will need to start a subscription to activate your account and Dynamic QR Codes.</div>
+          <div class="link-faqs-bottom"><a href="#">SEE FULL ANSWER</a></div>
+      </div>
+      <div class="col-md-5 col-sm-12 text-faqs">
+              <h6>What is the difference between Dynamic and Static QR Codes?</h6>
+              <div class="text-faqs-bottom">Dynamic QR Codes are advanced QR Codes with capabilities such as content editing and scan tracking. Static QR Codes are basic QR Codes, which are permanent but non-trackable and non-editable.</div>
+              <div class="link-faqs-bottom"><a href="#">SEE FULL ANSWER</a></div>
+      </div>
+
+      <div class="col-md-5 col-sm-12 text-faqs">
+              <h6>My QR Code is not working anymore. What happened?</h6>
+              <div class="text-faqs-bottom">In most cases, the QR Code stops working if your subscription has expired, your dynamic QR Code is in standby mode, or if the QR Code has become unscannable due to wear and tear.</div>
+              <div class="link-faqs-bottom"><a href="#">SEE FULL ANSWER</a></div>
+      </div>
+
+      <div class="col-md-5 col-sm-12 text-faqs">
+              <h6>What should be the minimum size of QR Code on print?</h6>
+              <div class="text-faqs-bottom">For most cases, the minimum size of a QR Code should at least be 1.2 inch or 3 cm or 115 pixels (in width and height). For the ideal size, see rule in full answer.</div>
+              <div class="link-faqs-bottom"><a href="#">SEE FULL ANSWER</a></div>
+      </div>
+      <div class="col-md-12 button-faqs text-center">
+          <a class="btn btn-primary">SEE ALL FAQs</a>
+      </div>
+  </div>
+</div>
+</div>
+<!-- end faqs -->
+<app-footer></app-footer>
+
+
+
+
+
+

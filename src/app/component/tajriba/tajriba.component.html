@@ -1,0 +1,72 @@
+
+              <form>
+                <div class="form-group">
+                    <input [(ngModel)]="sqrcode.title" name="title" type="text" placeholder="Enter Title" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="sqrcode.shorttitle" name="shorttitle" type="text" placeholder="Enter Short Title" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="sqrcode.description" name="description" type="text" placeholder="Enter Description" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="sqrcode.shortdescription" name="shortdescription" type="text" placeholder="Enter Short Description" class="form-control">
+                </div>
+                <div class="upload-btn-wrapper">
+                    <button class="btn btn-file">Upload a file</button>
+                    <input [(ngModel)]="sqrcode.image" type="file" name="image" />
+                </div>
+                <div class="form-group">
+                    <textarea [(ngModel)]="sqrcode.inputs" name="inputs" type="text" placeholder="Enter Inputs" class="form-control"></textarea>
+                </div> 
+  
+                <div class="row">
+                    <div class="col-md-4" *ngFor="let c of checkbox">
+                      <div class="form-group form-check">
+                    <input [(ngModel)]="sqrcode.recomended" id="{{ c.id }}" name="{{ c.name }}" value="recomended" type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="{{ c.id }}"><span></span>{{ c.label }}</label>
+                  </div>
+                  </div>
+                </div>
+  
+               
+                
+                <button (click)="create()" class="btn btn-primary btn-send" >Send</button>
+                <button (click)="update()" class="btn btn-primary btn-send" >Edit</button>
+                <button (click)="onForm()" class="btn btn-primary btn-cancel">Cancel</button>
+              </form>
+            
+    <div class="row show-data">
+      <div class="col-md-12">
+          <table class="table">
+              <thead class="thead">
+                <tr>
+                  <th scope="col">Title</th>
+                  <th scope="col">shortTitle</th>
+                  <th scope="col">shortDescription</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Image</th>
+                  <th scope="col">Inputs</th>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let lign of sqrcodes">
+                  <td>{{ lign.title }}</td>
+                  <td>{{ lign.shorttitle }}</td>
+                  <td>{{ lign.shortdescription }}</td>
+                  <td>{{ lign.description }}</td>
+                  <td>
+                    <img src="" alt="" width="20px" height="20px">
+                  </td>
+                  <td>{{ lign.id }}</td>
+                  <td> <a (click)="edit(post)" class="btn btn-primary"> <i class="fas fa-edit"></i> Edit</a> </td>
+                  <td> <a (click)="delete(post)" class="btn btn-primary btn-delete"> <i class="fas fa-trash-alt"></i> Delete</a> </td>
+                </tr>
+              </tbody>
+            </table>
+      </div>
+    </div>
+
+  
